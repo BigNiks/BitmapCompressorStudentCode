@@ -23,7 +23,7 @@
  *  @author Robert Sedgewick
  *  @author Kevin Wayne
  *  @author Zach Blick
- *  @author YOUR NAME HERE
+ *  @author Niko Madriz
  */
 public class BitmapCompressor {
 
@@ -34,6 +34,17 @@ public class BitmapCompressor {
     public static void compress() {
 
         // TODO: complete compress()
+        String encrypted = BinaryStdIn.readString();
+        int n = encrypted.length();
+        boolean isOne = false;
+        for (int i = 0; i < n; i++) {
+            if (encrypted.substring(i, i + 8).equals("00000000")) {
+                BinaryStdOut.write(0);
+            }
+            else {
+                BinaryStdOut.write(encrypted.charAt(i));
+            }
+        }
 
         BinaryStdOut.close();
     }
@@ -45,7 +56,13 @@ public class BitmapCompressor {
     public static void expand() {
 
         // TODO: complete expand()
-
+        int numZero = 8;
+        int letter = 0;
+        while (!BinaryStdIn.isEmpty()) {
+            if (BinaryStdIn.readInt() == 0b00000000) {
+                for (int i)
+            }
+        }
         BinaryStdOut.close();
     }
 

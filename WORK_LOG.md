@@ -1,9 +1,10 @@
-Name: YOUR NAME HERE
+Name: Niko Madriz
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date   |     Time      |                                                                                                                                                                                                                                                                                                                       Update |
+|:-------|:-------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Nov 15 | 11:25:11:55AM |                                                                                                                                                   I spent this time in class thinking through the problem. I'm honestly kinda confused on where to go as I can't really think of any immediate ways to compress binary code. |
+| Nov 16 |    8:9 AM     | I think I know the direction I need to go in but I am still not entirely sure. What I do know is that I need to figure out a way to compress the binary into patterns that I'll be able to decipher later on. I'm currently thinking of using the zeros within the code to determine the compression of the entire sequence. |
+| Nov 18 | 8:45-9:45 AM  |                       My suspicions were indeed confirmed by Mr. Blick, I am gonna use a repeating pattern of zeros as mentioned before. I'm not too sure on which one but for now I am thinking of using 8 zeros in a row as a starting point. I used the time in class to start working on my new code for this algorithm. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
