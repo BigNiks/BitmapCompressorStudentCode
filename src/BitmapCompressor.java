@@ -35,17 +35,31 @@ public class BitmapCompressor {
 
         // TODO: complete compress()
         String encrypted = BinaryStdIn.readString();
-        int n = encrypted.length();
+        int numZero = 0;
+        int numOne = 0;
         boolean isOne = false;
-        for (int i = 0; i < n; i++) {
-            if (encrypted.substring(i, i + 8).equals("00000000")) {
-                BinaryStdOut.write(0);
+        int n = encrypted.length();
+        int i = 0;
+        while (i < n) {
+            if (encrypted.substring(i, i + 1).equals("1")) {
+                isOne = true;
+                numZero = 0;
             }
-            else {
-                BinaryStdOut.write(encrypted.charAt(i));
+            if (!isOne && numOne == 0) {
+                numZero++;
             }
+            else if (encrypted.substring(i, i + 1).equals("0") && isOne){
+                isOne = false;
+                numOne = 0;
+                BinaryStdOut.write(numOne);
+                numZero++;
+            }
+            if (isOne) {
+                BinaryStdOut.write(numZero);
+                numOne++;
+            }
+            i++;
         }
-
         BinaryStdOut.close();
     }
 
@@ -56,13 +70,27 @@ public class BitmapCompressor {
     public static void expand() {
 
         // TODO: complete expand()
-        int numZero = 8;
-        int letter = 0;
-        while (!BinaryStdIn.isEmpty()) {
-            if (BinaryStdIn.readInt() == 0b00000000) {
-                for (int i)
+        int i = 0;
+        int numWrites = 0;
+        int n = BinaryStdIn.readInt();
+        boolean isOne = false;
+        while (i < n) {
+            numWrites = BinaryStdIn.readInt(8);
+            if (!isOne) {
+                for (int j = 0; j < numWrites; j++) {
+                    BinaryStdOut.write(0);
+                }
             }
+            else if (isOne) {
+                for (int j = 0; j < numWrites; j++) {
+                    BinaryStdOut.write(1);
+                }
+                isOne = false;
+            }
+            isOne = true;
+            i++;
         }
+
         BinaryStdOut.close();
     }
 
